@@ -6,4 +6,6 @@
   - y
   - z
 3. Create db named noteful
-4. Run migration
+4. create db named noteful-test
+5. Run migration for both databases
+6. Run seed file
