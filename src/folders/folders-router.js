@@ -10,7 +10,7 @@ const jsonParser = express.json()
 const serializeFolder = folder => ({
   id: folder.id,
   folder_name: folder.folder_name
-});
+})
 
 foldersRouter
   .route('/')
@@ -28,7 +28,7 @@ foldersRouter
 
     if (folder_name == null)
       return res.status(400).json({
-        error: { message: `Missing name in request body` }
+        error: { message: 'Missing name in request body' }
       })
 
     FoldersService.insertFolder(
@@ -54,7 +54,7 @@ foldersRouter
       .then(folder => {
         if (!folder) {
           return res.status(404).json({
-            error: { message: `Folder doesn't exist` }
+            error: { message: 'Folder doesn\'t exist' }
           })
         }
         res.folder = folder
@@ -66,4 +66,4 @@ foldersRouter
     res.json(serializeFolder(res.folder))
   })
 
-module.exports = foldersRouter;
+module.exports = foldersRouter
